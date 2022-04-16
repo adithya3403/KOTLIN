@@ -15,11 +15,11 @@ fun main() {
         if (iname in item) {
             var id = item.indexOf(iname)
             print("Enter quantity : ")
-        var qn = readLine()!!.toInt()
-        choice[id] = qn
-    } else println("Enter valid item")
+            var qn = readLine()!!.toInt()
+            choice[id] = qn
+        } else println("Enter valid item")
     }
-    var total:Int = 0
+    var total: Int = 0
     for (i in 0 until choice.size) {
         total += choice[i] * price[i]
     }
