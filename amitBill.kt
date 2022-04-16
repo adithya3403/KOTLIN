@@ -37,20 +37,19 @@ oil	300
 Bill amount is Rs.500
 */
 
-
 fun main() {
     println("Enter name and price of the goods purchased('s' to stop):")
-    var total: Int = 0
-    var items: ArrayList<String> = ArrayList()
-    var prices: ArrayList<Int> = ArrayList()
+    var total = 0
+    val items: ArrayList<String> = ArrayList()
+    val prices: ArrayList<Int> = ArrayList()
     while (true) {
         println("enter item name:")
-        var item = readLine()!!
+        val item = readLine()!!
         if (item == "s") {
             break
         }
         println("enter price:")
-        var price = readLine()!!.toInt()
+        val price = readLine()!!.toInt()
         total += price
         items.add(item)
         prices.add(price)
@@ -63,8 +62,8 @@ fun main() {
     var flag = 0
     while (total > 500) {
         println("Total Bill $total is more than 500, enter name of an item to remove from list")
-        var item = readLine()!!
-        for (i in 0..items.size - 1) {
+        val item = readLine()!!
+        for (i in 0 until items.size) {
             if (item == items[i]) {
                 println("$item is removed from the bill")
                 total -= prices[i]
@@ -82,7 +81,7 @@ fun main() {
         println("Congratulations:")
         println("you final bill:")
         println("item\tprice")
-        for (i in 0..items.size - 1) {
+        for (i in 0 until items.size) {
             println("${items[i]}\t${prices[i]}")
         }
         println("Bill amount is Rs.$total")
